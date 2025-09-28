@@ -9,7 +9,7 @@ export default function Prox() {
     const fetchWsdl = async () => {
       try {
         
-        const res = await axios.get("http://localhost:5000/wsdl", { responseType: "text" });
+        const res = await axios.get("http://192.168.93.114:5000/wsdl", { responseType: "text" });
         setWsdlText(res.data);
 
         const parser = new DOMParser();
@@ -23,7 +23,6 @@ export default function Prox() {
     };
     fetchWsdl();
   }, []);
-
   return (
     <div style={{ padding: 16 }}>
       <h2>Operations</h2>

@@ -4,7 +4,7 @@ export const getWsdlActions = async (url) => {
 
     
     try {
-        const res = await axios.post("http://localhost:5000/api/wsdl-actions", {
+        const res = await axios.post("http://192.168.93.114:5000/api/wsdl-actions", {
             wsdlUrl: url
         });
         console.log("Available Services & Actions:", res.data);
@@ -19,7 +19,7 @@ export const getWsdlActions = async (url) => {
 export const callAction = async (url, action, body) => {
 
     try {
-        const res = await axios.post("http://localhost:5000/api/call", {
+        const res = await axios.post("http://192.168.93.114:5000/api/call", {
             wsdlUrl: CheckURL(url),
             action: action,
             params: body
@@ -39,7 +39,7 @@ export const callAction = async (url, action, body) => {
 export const GetServices = async () => {
 
     try {
-        const res = await axios.get("http://localhost:5000/api/list");
+        const res = await axios.get("http://192.168.93.114:5000/api/list");
 
         return res.data;
     } catch (err) {
@@ -52,12 +52,11 @@ export const GetServices = async () => {
 export const AddNewService = async (body) => {
 
     try {
-        const res = await axios.post("http://localhost:5000/api/add",body);
+        const res = await axios.post("http://192.168.93.114:5000/api/add",body);
     } catch (err) {
         console.log({ err })
         throw err;
     }
-
 }
 
 
